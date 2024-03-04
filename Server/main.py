@@ -16,12 +16,7 @@ chroma_url = "https://a0mqqykvni.execute-api.us-west-2.amazonaws.com/dev"
 app.include_router(endpoint_router)
 
 chroma_client = Client(chroma_url, settings=Settings)
-# chromadb/config.py
-class Settings:
-    def __init__(self, chroma_db_impl, persist_directory, chroma_api_impl):
-        self.chroma_db_impl = chroma_db_impl
-        self.persist_directory = persist_directory
-        self.chroma_api_impl = chroma_api_impl
+
 
 
 if __name__ == "__main__":
