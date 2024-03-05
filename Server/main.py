@@ -3,7 +3,7 @@ from chromadb import Client
 from chromadb.config import Settings
 from endpoints.endpoints import router as endpoint_router
 from endpoints.models import Document
-from app import app
+app = FastAPI()
 
 settings = Settings(
     chroma_db_impl="duckdb+parquet",
@@ -19,9 +19,7 @@ chroma_client = Client(chroma_url, settings=Settings)
 
 
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+
 
 
 

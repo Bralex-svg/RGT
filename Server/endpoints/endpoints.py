@@ -1,11 +1,10 @@
-from fastapi import APIRouter, Depends
+from fastapi import FastAPI, APIRouter, Depends
 from sqlalchemy.orm import Session
 from database.get_db import get_db
 from .models import Document
-from app import app
 router = APIRouter()  
 
-
+app = FastAPI()
 class CreateDocument(APIRouter):
     @router.post("/documents/", response_model=Document)
     async def create_document(document: Document, db: Session = Depends(get_db)):
